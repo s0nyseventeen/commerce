@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     # own
     'accounts.apps.AccountsConfig',
 
+    # adds
+    'django_filters',
 ]
 
 MIDDLEWARE = [

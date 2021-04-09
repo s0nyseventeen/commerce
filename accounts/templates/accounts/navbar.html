@@ -1,4 +1,12 @@
 {% load static %}
+
+<style>
+  .hello-msg {
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+  }
+</style>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<img src="{% static 'images/whale.png' %}">
   <div class="container-fluid">
@@ -17,4 +25,6 @@
       </ul>
     </div>
   </div>
+  <span class="hello-msg">{{ request.user }}</span>
+  <span><a class="hello-msg" href="{% url 'accounts:logout' %}">Logout</a></span>
 </nav>
