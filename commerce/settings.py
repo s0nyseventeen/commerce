@@ -38,11 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # own
     'accounts.apps.AccountsConfig',
-
-    # adds
     'django_filters',
 ]
 
@@ -125,6 +121,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
-MEDIA_URL = '/images/'
+MEDIA_URL = '/images/'  # http://127.0.0.1:8000/images/art_ava.jpeg
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')  # to save uploaded images into the static folder
+
+
+#SMTP Configuration
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sonysevent@gmail.com'
+EMAIL_HOST_PASSWORD = '5247942st17'

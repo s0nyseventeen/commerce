@@ -8,7 +8,7 @@
 			<h5>Customer: {{ customer.name }}</h5>
 			<hr>
 			<a class="btn btn-outline-info  btn-sm btn-block" href="">Update Customer</a>
-			<a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'accounts:create_order' customer.id %}">Place Order</a>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'create_order' customer.id %}">Place Order</a>
 
 		</div>
 	</div>
@@ -60,8 +60,8 @@
 						<td>{{ order.note }}</td>
 						<td>{{ order.date_created }}</td>
 						<td>{{ order.status }}</td>
-						<td><a class="btn btn-sm btn-info" href="{% url 'accounts:update_order' order.pk %}">Update</a></td>
-						<td><a class="btn btn-sm btn-danger" href="{% url 'accounts:delete_order' order.pk %}">Delete</a></td>
+						<td><a class="btn btn-sm btn-info" href="{% url 'update_order' order.pk %}">Update</a></td>
+						<td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.pk %}">Delete</a></td>
 					</tr>
 				{% endfor %}
 				
